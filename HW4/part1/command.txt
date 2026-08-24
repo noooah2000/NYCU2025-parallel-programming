@@ -1,0 +1,26 @@
+cd pp_remote/HW4/part1 && module load pp
+
+make clean && make
+
+run --mpi=pmix -N 8 -n 8 -- ./mpi_hello
+
+scancel -u chhuang2000
+
+mpicc pi_block_linear.c -o pi_block_linear
+run --mpi=pmix -N 4 -n 4 -- ./pi_block_linear 1000000000
+
+mpicc pi_block_tree.c -o pi_block_tree
+run --mpi=pmix -N 4 -n 4 -- ./pi_block_tree 1000000000
+
+mpicc pi_nonblock_linear.c -o pi_nonblock_linear
+run --mpi=pmix -N 4 -n 4 -- ./pi_nonblock_linear 1000000000
+
+mpicc pi_gather.c -o pi_gather
+run --mpi=pmix -N 4 -n 4 -- ./pi_gather 1000000000
+
+mpicc pi_reduce.c -o pi_reduce
+run --mpi=pmix -N 4 -n 4 -- ./pi_reduce 1000000000
+
+mpicc pi_one_side.c -o pi_one_side
+run --mpi=pmix -N 4 -n 4 -- ./pi_one_side 1000000000
+

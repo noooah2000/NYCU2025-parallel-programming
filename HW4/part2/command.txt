@@ -1,0 +1,166 @@
+cd pp_remote/HW4/part2 && module load pp
+
+make clean && make
+
+scancel -u chhuang2000
+
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data1_1 > my_ans1_1
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data1_5 > my_ans1_5
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data1_10 > my_ans1_10
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data1_15 > my_ans1_15
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data1_20 > my_ans1_20
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data2_1 > my_ans2_1
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data2_5 > my_ans2_5
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data2_10 > my_ans2_10
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data2_15 > my_ans2_15
+run --mpi=pmix -N 4 -n 4 -- ./matmul /data/pp/hw4/test/data2_20 > my_ans2_20
+
+diff my_ans1_1 /data/pp/hw4/test/ans1_1
+diff my_ans1_5 /data/pp/hw4/test/ans1_5
+diff my_ans1_10 /data/pp/hw4/test/ans1_10
+diff my_ans1_15 /data/pp/hw4/test/ans1_15
+diff my_ans1_20 /data/pp/hw4/test/ans1_20
+diff my_ans2_1 /data/pp/hw4/test/ans2_1
+diff my_ans2_5 /data/pp/hw4/test/ans2_5
+diff my_ans2_10 /data/pp/hw4/test/ans2_10
+diff my_ans2_15 /data/pp/hw4/test/ans2_15
+diff my_ans2_20 /data/pp/hw4/test/ans2_20
+
+
+362d361
+< MPI running time: 0.017655 Seconds
+474d473
+< MPI running time: 0.0284395 Seconds
+463d462
+< MPI running time: 0.0324686 Seconds
+316d315
+< MPI running time: 0.019058 Seconds
+336d335
+< MPI running time: 0.0120487 Seconds
+1452d1451
+< MPI running time: 0.434099 Seconds
+1498d1497
+< MPI running time: 0.447188 Seconds
+1817d1816
+< MPI running time: 0.489724 Seconds
+1281d1280
+< MPI running time: 0.629905 Seconds
+1124d1123
+< MPI running time: 0.540436 Seconds
+
+
+
+
+362d361
+< MPI running time: 0.0143692 Seconds
+474d473
+< MPI running time: 0.0266557 Seconds
+463d462
+< MPI running time: 0.0248377 Seconds
+316d315
+< MPI running time: 0.0204744 Seconds
+336d335
+< MPI running time: 0.0215035 Seconds
+1452d1451
+< MPI running time: 0.453036 Seconds
+1498d1497
+< MPI running time: 0.44397 Seconds
+1817d1816
+< MPI running time: 0.509711 Seconds
+1281d1280
+< MPI running time: 0.57908 Seconds
+1124d1123
+< MPI running time: 0.498191 Seconds
+
+
+
+362d361
+< MPI running time: 0.0121795 Seconds
+474d473
+< MPI running time: 0.0261238 Seconds
+463d462
+< MPI running time: 0.0217934 Seconds
+316d315
+< MPI running time: 0.0178799 Seconds
+336d335
+< MPI running time: 0.0205836 Seconds
+1452d1451
+< MPI running time: 0.472569 Seconds
+1498d1497
+< MPI running time: 0.467226 Seconds
+1817d1816
+< MPI running time: 0.506708 Seconds
+1281d1280
+< MPI running time: 0.560465 Seconds
+1124d1123
+< MPI running time: 0.498608 Seconds
+
+
+
+
+
+
+362d361
+< MPI running time: 0.0093986 Seconds
+474d473
+< MPI running time: 0.0280265 Seconds
+463d462
+< MPI running time: 0.0290613 Seconds
+316d315
+< MPI running time: 0.0125005 Seconds
+336d335
+< MPI running time: 0.0144147 Seconds
+1452d1451
+< MPI running time: 0.440586 Seconds
+1498d1497
+< MPI running time: 0.48597 Seconds
+1817d1816
+< MPI running time: 0.519346 Seconds
+1281d1280
+< MPI running time: 0.638961 Seconds
+1124d1123
+< MPI running time: 0.586719 Seconds
+
+
+362d361
+< MPI running time: 0.0115832 Seconds
+474d473
+< MPI running time: 0.0207394 Seconds
+463d462
+< MPI running time: 0.0178947 Seconds
+316d315
+< MPI running time: 0.013823 Seconds
+336d335
+< MPI running time: 0.0151221 Seconds
+1452d1451
+< MPI running time: 0.368632 Seconds
+1498d1497
+< MPI running time: 0.33288 Seconds
+1817d1816
+< MPI running time: 0.387975 Seconds
+1281d1280
+< MPI running time: 0.496593 Seconds
+1124d1123
+< MPI running time: 0.403165 Seconds
+
+
+362d361
+< MPI running time: 0.0182391 Seconds
+474d473
+< MPI running time: 0.0320863 Seconds
+463d462
+< MPI running time: 0.0286961 Seconds
+316d315
+< MPI running time: 0.0143112 Seconds
+336d335
+< MPI running time: 0.0153425 Seconds
+1452d1451
+< MPI running time: 0.364102 Seconds
+1498d1497
+< MPI running time: 0.360756 Seconds
+1817d1816
+< MPI running time: 0.408665 Seconds
+1281d1280
+< MPI running time: 0.467705 Seconds
+1124d1123
+< MPI running time: 0.396768 Seconds

@@ -1,0 +1,6 @@
+ssh cspp02
+cd pp_remote/HW2/part2 && module load pp
+
+scp pi.cpp Makefile cs04:~/HW2/part1/
+
+run -c 6 -- bash -c "time ./pi.out 2 100000000"

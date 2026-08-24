@@ -1,0 +1,14 @@
+.DS_Store
+.vscode/
+*.pyc
+__pycache__/
+*.o
+*.out
+*.a
+*.zip
+*.log
+slurm-*.out
+slurm-*.err
+*.ppm
+*.bmp
+*.graph

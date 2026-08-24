@@ -1,0 +1,11 @@
+cd pp_remote/HW3/part1 && module load pp
+
+make clean && make
+
+perf record -e cpu-cycles ./cg
+
+perf report
+
+run -c 1 -- ./cg
+
+run -c 4 -- ./cg_grader

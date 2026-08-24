@@ -1,0 +1,26 @@
+cd pp_remote/HW6 && module load pp
+
+run -- ffmpeg -i source.png -pix_fmt gray -vf scale=600:400 destination.bmp
+
+run -- ./conv -f 2
+
+scancel -u chhuang2000
+
+zip HW6_314551161.zip kernel.cl host_fe.c 
+
+test_hw6 314551161
+
+chhuang2000@login03:~/pp_remote$ test_hw6 314551161
+File Name                                             Modified             Size
+kernel.cl                                      2025-12-02 22:25:30         2659
+host_fe.c                                      2025-12-03 01:19:00         4967
+======================================
+Scores:
+--------------------------------------
+Correctness:   60 / 60
+--------------------------------------
+Reference (R): 1.26 s
+Yours (Y):     1.11 s
+Performance:   100.00
+======================================
+ID='314551161' done.

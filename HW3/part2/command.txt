@@ -1,0 +1,197 @@
+cd pp_remote/HW3/part2/page_rank && module load pp
+cd pp_remote/HW3/part2/breadth_first_search && module load pp
+
+make clean && make
+
+perf record -e cpu-cycles ./pr
+
+perf report
+
+run -c 4 -- ./pr /data/pp/hw3/test/com-orkut_117m.graph
+run -c 4 -- ./pr /data/pp/hw3/test/com-orkut_117m.graph 4
+run -c 4 -- ./pr_grader /data/pp/hw3/test
+
+run -c 4 -- ./bfs /data/pp/hw3/test/com-orkut_117m.graph
+
+oc-pokec_30m.graph
+rmat_200m.graph
+soc-livejournal1_68m.graph
+
+scancel -u chhuang2000
+
+
+chhuang2000@login03:~/pp_remote$ test_hw3 314551161
+File Name                                             Modified             Size
+cg_impl.c                                      2025-10-24 02:46:32        19914
+bfs.cpp                                        2025-10-30 18:03:38        11090
+page_rank.cpp                                  2025-10-25 01:57:52         3610
+
+CG start...
+
+ Size:       14000
+ Iterations:    15
+ Running with 6 threads
+
+
+   iteration           ||r||                 zeta
+        1       2.60650812147631E-13    19.9997581277040
+
+   iteration           ||r||                 zeta
+        1       2.60650812147631E-13    19.9997581277040
+        2       2.57531877367169E-15    17.1140495745506
+        3       2.59348789075185E-15    17.1296668946143
+        4       2.56262926848262E-15    17.1302113581193
+        5       2.51106135247005E-15    17.1302338856353
+        6       2.55819375820883E-15    17.1302349879482
+        7       2.54564770410681E-15    17.1302350498916
+        8       2.44940683285382E-15    17.1302350537510
+        9       2.48852359037289E-15    17.1302350540101
+       10       2.47715076108563E-15    17.1302350540284
+       11       2.49284410170029E-15    17.1302350540298
+       12       2.44437060612294E-15    17.1302350540299
+       13       2.47093619226119E-15    17.1302350540299
+       14       2.43816304501123E-15    17.1302350540299
+       15       2.42966732234484E-15    17.1302350540299
+ VERIFICATION SUCCESSFUL
+ Zeta is     1.7130235054030E+01
+ Error is    5.1226400332279E-14
+
+reference time : 0.742561s
+default time   : 1.214983s
+student time   : 0.625561s
+
+correctness : 4.000000
+performance : 16.000000
+total       : 20.000000
+
+Max system threads = 6
+Running with 6 threads
+
+Graph: soc-livejournal1_68m.graph
+ref_time: 11.625s
+stu_time: 2.66361s
+
+Graph: com-orkut_117m.graph
+ref_time: 5.95488s
+stu_time: 4.88086s
+
+Graph: rmat_200m.graph
+ref_time: 13.2713s
+stu_time: 17.0295s
+
+Graph: random_500m.graph
+ref_time: 31.0848s
+stu_time: 30.9296s
+
+
+-------------------------------------------
+SCORES :
+-------------------------------------------
+soc-livejournal1_68m.graph  |   4.00000 / 4 |
+-------------------------------------------
+com-orkut_117m.graph        |   4.00000 / 4 |
+-------------------------------------------
+rmat_200m.graph             |   4.00000 / 4 |
+-------------------------------------------
+random_500m.graph           |   4.00000 / 4 |
+-------------------------------------------
+TOTAL                       |   16.00000 / 16 |
+-------------------------------------------
+
+Max system threads = 6
+Running with 6 threads
+
+Graph: grid1000x1000.graph
+
+Top down bfs
+ref_time: 0.0202967s
+stu_time: 0.0273026s
+
+Bottom up bfs
+ref_time: 0.955543s
+stu_time: 1.03731s
+
+Hybrid bfs
+ref_time: 0.390052s
+stu_time: 0.0321749s
+
+Graph: soc-livejournal1_68m.graph
+
+Top down bfs
+ref_time: 0.147641s
+stu_time: 0.105949s
+
+Bottom up bfs
+ref_time: 0.122023s
+stu_time: 0.129332s
+
+Hybrid bfs
+ref_time: 0.0724754s
+stu_time: 0.0678145s
+
+Graph: com-orkut_117m.graph
+
+Top down bfs
+ref_time: 0.157098s
+stu_time: 0.088857s
+
+Bottom up bfs
+ref_time: 0.124548s
+stu_time: 0.126428s
+
+Hybrid bfs
+ref_time: 0.0480769s
+stu_time: 0.0341534s
+
+Graph: random_500m.graph
+
+Top down bfs
+ref_time: 4.00019s
+stu_time: 3.45971s
+
+Bottom up bfs
+ref_time: 18.3266s
+stu_time: 5.93637s
+
+Hybrid bfs
+ref_time: 3.41456s
+stu_time: 2.26604s
+
+Graph: rmat_200m.graph
+
+Top down bfs
+ref_time: 1.84917s
+stu_time: 1.64255s
+
+Bottom up bfs
+ref_time: 1.8134s
+stu_time: 0.872133s
+
+Hybrid bfs
+ref_time: 0.720123s
+stu_time: 0.56452s
+
+
+--------------------------------------------------------------------------
+SCORES :                    |   Top-Down    |   Bott-Up    |    Hybrid    |
+--------------------------------------------------------------------------
+grid1000x1000.graph         |      2.00 / 2 |     3.00 / 3 |     3.00 / 3 |
+--------------------------------------------------------------------------
+soc-livejournal1_68m.graph  |      2.00 / 2 |     3.00 / 3 |     3.00 / 3 |
+--------------------------------------------------------------------------
+com-orkut_117m.graph        |      2.00 / 2 |     3.00 / 3 |     3.00 / 3 |
+--------------------------------------------------------------------------
+random_500m.graph           |      6.00 / 6 |     7.00 / 7 |     7.00 / 7 |
+--------------------------------------------------------------------------
+rmat_200m.graph             |      6.00 / 6 |     7.00 / 7 |     7.00 / 7 |
+--------------------------------------------------------------------------
+SUM                         |    18.00 / 18 |   23.00 / 23 |   23.00 / 23 |
+--------------------------------------------------------------------------
+TOTAL                                                      |  64.00 / 64 |
+--------------------------------------------------------------------------
+
+CG Score                   : 20.0
+Pagerank Score             : 16.0
+Breadth First Search Score : 64.0
+Total Score                : 100.0
+ID='314551161' done.

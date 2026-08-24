@@ -1,0 +1,5 @@
+cd pp_remote/HW2/part2 && module load pp
+
+make clean && make
+
+run -c 2 -- ./mandelbrot -t 2

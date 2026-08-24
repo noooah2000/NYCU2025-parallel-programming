@@ -1,0 +1,55 @@
+cd pp_remote/HW5 && module load pp
+
+make KERNEL=kernel1
+make KERNEL=kernel4
+
+run -- ./mandelbrot -i 100000 -v 1 -g 1
+run -- ./mandelbrot -i 100000 -v 2 -g 1
+
+scancel -u chhuang2000
+
+zip HW5_314551161.zip kernel1.cu kernel2.cu kernel3.cu kernel4.cu
+
+test_hw5 314551161 -s
+
+chhuang2000@login03:~/pp_remote/HW5$ test_hw5 314551161
+File Name                                             Modified             Size
+kernel1.cu                                     2025-11-21 16:52:14         2770
+kernel2.cu                                     2025-11-21 16:53:16         3080
+kernel3.cu                                     2025-11-21 23:58:28         3289
+kernel4.cu                                     2025-11-22 16:41:32         4252
+kernel1 --iter=256    passed.
+kernel1 --iter=1000   passed.
+kernel1 --iter=10000  passed.
+kernel1 --iter=100000 passed.
+kernel2 --iter=256    passed.
+kernel2 --iter=1000   passed.
+kernel2 --iter=10000  passed.
+kernel2 --iter=100000 passed.
+kernel3 --iter=256    passed.
+kernel3 --iter=1000   passed.
+kernel3 --iter=10000  passed.
+kernel3 --iter=100000 passed.
+kernel4 --iter=256    passed.
+kernel4 --iter=1000   passed.
+kernel4 --iter=10000  passed.
+kernel4 --iter=100000 passed.
+--------------------------------------
+kernel1: 10 (correct) + 10 (speedup)
+kernel2: 10 (correct) + 10 (speedup)
+kernel3: 10 (correct) + 10 (speedup)
+Score:   60 / 60
+--------------------------------------
+kernel4 --iter=100000 --view=1:
+Reference (R):  221.0000 ms
+Yours (Y):      46.4513 ms
+Score:          100.00 (20%)
+* NOTE: This is only for reference.
+--------------------------------------
+kernel4 --iter=100000 --view=2:
+Reference (R):  20.5000 ms
+Yours (Y):      27.8807 ms
+Score:          56.80 (20%)
+* NOTE: This is only for reference.
+--------------------------------------
+ID='314551161' done.
