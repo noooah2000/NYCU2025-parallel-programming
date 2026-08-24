@@ -1,4 +1,3 @@
-# Parallel Programming @ NCTU, Fall 2020
 # Programming Assignment II: Multi-thread Programming
 
 The purpose of this assignment is to familiarize yourself with Pthread and std::thread programming in C and C++, respectively. You will also gain experience measuring and reasoning about the performance of parallel programs (a challenging, but important, skill you will use throughout this class). This assignment involves only a small amount of programming, but a lot of analysis!

@@ -1,4 +1,3 @@
-# Parallel Programming @ NCTU, Fall 2020
 # Programming Assignment III: OpenMP Programming
 
 The purpose of this assignment is to familiarize yourself with OpenMP programming.

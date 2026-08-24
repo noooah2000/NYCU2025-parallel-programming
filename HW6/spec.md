@@ -1,4 +1,3 @@
-# Parallel Programming @ NCTU, Fall 2020
 # Assignment VI: OpenCL Programming
 
 The purpose of this assignment is to familiarize yourself with OpenCL programming.

@@ -1,4 +1,3 @@
-# Parallel Programming @ NCTU, Fall 2020
 # Assignment V: CUDA Programming
 
 The purpose of this assignment is to familiarize yourself with CUDA programming.
