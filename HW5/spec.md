@@ -1,11 +1,4 @@
-Parallel Programming @ NCTU, Fall 2020 | This is the webpage for the Parallel Programming course
-
 # Parallel Programming @ NCTU, Fall 2020
-
-## This is the webpage for the Parallel Programming course
-
-[View on GitHub](https://github.com/nycu-sslab/PP-f20)
-
 # Assignment V: CUDA Programming
 
 The purpose of this assignment is to familiarize yourself with CUDA programming.
