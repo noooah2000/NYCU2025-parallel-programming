@@ -1,10 +1,10 @@
 # NYCU Parallel Programming Homework
 
-This repository contains the homework projects for the NYCU Parallel Programming course.
+This repository contains a collection of programming assignments completed as part of the NYCU Parallel Programming course.
 
 ## Overview
 
-The assignments cover SIMD programming, multi-threaded optimization, OpenMP, MPI, CUDA, and OpenCL. Each homework folder contains source code, build scripts, and supporting utilities.
+The projects in this repository cover core parallel programming concepts, including SIMD optimization, multithreading, OpenMP, MPI, CUDA, and OpenCL. Each assignment is organized in its own folder and corresponds to a separate specification.
 
 ## Repository Structure
 
@@ -19,28 +19,42 @@ The assignments cover SIMD programming, multi-threaded optimization, OpenMP, MPI
 ## Homework Details
 
 ### HW0
-Basic warm-up exercise for numerical computation and build setup.
+This warm-up assignment introduces the basic build flow and simple numerical computation used in the course.
 
 ### HW1
-SIMD programming and vectorization optimization.
+This assignment focuses on SIMD programming and vectorization optimization using intrinsics and compiler techniques.
 
 ### HW2
-Multi-threaded parallel programming and performance evaluation.
+This assignment extends the work to multithreaded programming and explores synchronization, performance measurement, and parallel execution models.
 
 ### HW3
-OpenMP-based parallel algorithms and graph processing workloads.
+This assignment introduces OpenMP-based parallelization for scientific and graph-related workloads.
 
 ### HW4
-MPI distributed-memory programming and message passing.
+This assignment introduces MPI programming for distributed-memory parallel computing and communication patterns.
 
 ### HW5
-CUDA GPU programming for image processing and parallel kernels.
+This assignment focuses on CUDA programming for GPU acceleration and kernel optimization.
 
 ### HW6
-OpenCL heterogeneous parallel programming and image convolution.
+This assignment introduces OpenCL programming for heterogeneous parallel computation and image convolution.
+
+## Technologies Used
+
+- C / C++
+- SIMD intrinsics
+- POSIX threads
+- OpenMP
+- MPI
+- CUDA
+- OpenCL
 
 ## Notes
 
-- This repository is intended for academic learning and coursework.
-- Each homework directory includes its own assignment specification in `spec.md`.
-- Generated build artifacts and large temporary outputs are ignored by Git.
+- Each homework folder contains its own specification in `spec.md`.
+- The repository is intended for educational and academic learning purposes.
+- These assignments are designed to practice practical parallel programming and systems concepts.
+
+## License
+
+This project is for educational and academic use.
